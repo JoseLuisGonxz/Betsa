@@ -1,0 +1,534 @@
+
+      body {
+        background-color: #ffffff;
+        color: #000000;
+      }
+      .container {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .btn-primary {
+        background-color: #000000;
+        border-color: #000000;
+      }
+      .btn-primary:hover {
+        background-color: #ffffff;
+        border-color: #000000;
+        color: #959090;
+      }
+      .btn-success {
+        background-color: #000000;
+        border-color: #000000;
+      }
+      .btn-success:hover {
+        background-color: #ffffff;
+        border-color: #000000;
+        color: #000000;
+      }
+      .form-group label {
+        font-size: 18px;
+      }
+      .form-group input[type="text"] {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        margin-top: 10px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+      .custom-file-input::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+      .custom-file-input::before {
+        content: "Elegir archivo";
+        display: inline-block;
+        background-color: #000000;
+        border-color: #000000;
+        color: #ffffff;
+        padding: 0.375rem 0.75rem;
+        border-radius: 0.25rem;
+        white-space: nowrap;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .custom-file-input:hover::before {
+        background-color: #ffffff;
+        border-color: #000000;
+        color: #000000;
+      }
+      .custom-file-input:active::before {
+        background-color: #000000;
+        border-color: #000000;
+        color: #ffffff;
+      }
+
+      /* Estilo para la casilla de selección */
+      .checkbox-container {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .checkbox-label {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        font-size: 18px;
+        user-select: none;
+        padding-left: 30px;
+        margin-bottom: 10px;
+      }
+
+      .checkbox-label input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #fff;
+        border: 2px solid #000;
+        border-radius: 4px;
+      }
+
+      .checkbox-label:hover .checkmark {
+        border-color: #333;
+      }
+
+      .checkbox-label input:checked ~ .checkmark {
+        background-color: #000;
+      }
+
+      .checkbox-label input:checked ~ .checkmark:after {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      #estado {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        margin-top: 10px;
+      }
+      /* Estilos para la casilla de selección */
+      .form-check .form-check-input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .form-check .form-check-label {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        user-select: none;
+      }
+
+      .form-check .form-check-label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #000000;
+        border-radius: 4px;
+        transition: background-color 0.2s, border-color 0.2s;
+      }
+
+      .form-check .form-check-input:checked + .form-check-label:before {
+        background-color: #000000;
+        border-color: #000000;
+      }
+
+      .form-check .form-check-label:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid #ffffff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .form-check .form-check-input:checked + .form-check-label:after {
+        display: block;
+      }
+
+      .form-check .form-check-label {
+        position: relative;
+        padding-left: 25px; /* ajusta el valor según sea necesario */
+        margin-bottom: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 1; /* ajusta el valor según sea necesario */
+        user-select: none;
+      }
+
+      /* Estilo para el modo oscuro */
+      .modo-oscuro {
+        background-color: #000000;
+        color: #ffffff;
+      }
+      .form-check {
+        margin-bottom: 10px;
+      }
+
+      .container {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .form-group .custom-file-label {
+        font-size: 18px;
+      }
+
+      .btn-primary {
+        background-color: #000000;
+        border-color: #000000;
+      }
+
+      .btn-primary:hover {
+        background-color: #ffffff;
+        border-color: #000000;
+        color: #959090;
+      }
+
+      #successMessage {
+        display: none;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      #curp-box {
+        display: none;
+        cursor: pointer;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+        color: #000000;
+      }
+
+      #curp-box:hover {
+        background-color: #f2f2f2;
+      }
+
+      #curp-content {
+        font-size: 14px;
+        margin-bottom: 8px;
+        color: #000000;
+      }
+
+      #copy-button {
+        background-color: #000000;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 12px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #copy-button:hover {
+        background-color: #ffffff;
+        color: #000000;
+      }
+
+      .dropdown .btn-primary {
+        background-color: #f8f9fa;
+        color: #000000;
+        border: 1px solid #ced4da;
+      }
+
+      .dropdown .btn-primary:hover {
+        background-color: #e9ecef;
+        color: #000000;
+        border: 1px solid #ced4da;
+      }
+
+      .dropdown .dropdown-menu {
+        padding: 10px;
+      }
+
+      .dropdown .form-check {
+        margin-bottom: 5px;
+      }
+
+      .form-container {
+        display: none;
+      }
+
+      .form-container.show {
+        display: block;
+      }
+      .btn-primary {
+        background-color: #000000; /* Cambia el color de fondo del botón */
+        color: #ffffff; /* Cambia el color del texto en el botón */
+      }
+
+      .btn-primary img {
+        filter: invert(1); /* Invierte los colores del icono */
+      }
+
+
+
+/* Estilos para el forfmulario de configuración */
+.form-container {
+        display: none;
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+      }
+    
+      .form-container.show {
+        display: block;
+      }
+    
+      .form-container h3 {
+        margin-top: 0;
+      }
+    
+      .form-check {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+    
+      .form-check-input {
+        margin-right: 10px;
+      }
+    
+      .text-center {
+        text-align: center;
+      }
+
+
+      #curp-box {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 500%; /* Ajusta el ancho del cuadro según tus necesidades */
+    max-width: 600px; /* Define un ancho máximo para evitar que el cuadro sea demasiado grande en pantallas muy anchas */
+    margin-left: auto; /* Centra horizontalmente el cuadro */
+    margin-right: auto; /* Centra horizontalmente el cuadro */
+
+/*     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+ */  }
+
+  #curp-box:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del cuadro al pasar el cursor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra más pronunciada */
+    opacity: 0.7; /* Reduce ligeramente la opacidad del cuadro */
+  }
+
+  #curp-content {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 10px;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el texto */
+  }
+
+  #curp-text {
+    font-size: 20px;
+    font-weight: lighter;
+    color: #000000;
+    text-transform: uppercase;
+  }
+
+/* Estilos para Datos capturados */
+#pdfData {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#pdfData h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#pdfData p {
+  margin: 10px 0;
+}
+
+#pdfData strong {
+  font-weight: bold;
+  color: #222;
+}
+
+#pdfData span {
+  color: #555;
+}
+
+/* Estilos adicionales para un aspecto más moderno */
+
+#pdfData {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e5e5;
+}
+
+#pdfData h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #333333;
+}
+
+#pdfData p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+#pdfData strong {
+  font-weight: bold;
+  color: #222222;
+}
+
+#pdfData span {
+  color: #666666;
+}
+
+[data-copy] {
+  cursor: pointer;
+}
+
+#copyMessage {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#copyMessage.show {
+  opacity: 1;
+}
+
+
+/* Notificación */
+/* Estilos personalizados para las notificaciones Toastr.js */
+
+  .notification {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #333333;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: fixed;
+    top: 20px; /* Ajusta la posición vertical */
+    right: 20px; /* Ajusta la posición horizontal */
+    z-index: 9999; /* Ajusta el nivel de apilamiento */
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    transition-delay: 5s; /* Ajusta el tiempo de retraso en segundos */
+  
+  }
+
+.notification-icon {
+  margin-right: 16px;
+  font-size: 24px;
+  color: #009688; /* Color del icono */
+}
+
+.notification-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.notification-message {
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+.notification-close {
+  margin-left: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  color: #999999; /* Color del botón de cierre */
+}
+
+.notification-close:hover {
+  opacity: 0.7;
+}
+
+.notification.slide-in {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.notification.slide-in.active {
+  transform: translateX(0);
+  opacity: 1;
+}

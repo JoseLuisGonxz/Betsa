@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Formato de Actas</title>
+  <!-- Responsivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Enlaces a archivos CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-yQgMr07qkjVw9sNlj6ET9GNWcOAIhxXaGRRtEX5lphg6e7doJY0WQRyJN/JB7XhRZazgSSZ8MiUjGjyNmtXgSg==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Formato para Actas</h1>
+    <form id="pdfForm" enctype="multipart/form-data" action="/CargarPDF" method="POST">
+      <div class="form-group">
+        <div class="custom-file">
+          <!-- Input para seleccionar el archivo PDF -->
+          <input type="file" class="custom-file-input" id="pdfFile" name="pdfFile" accept=".pdf" required />
+          <label class="custom-file-label" for="pdfFile">Seleccionar PDF</label>
+        </div>
+      </div>
+
+      <!-- Botón para mostrar/ocultar el formulario adicional -->
+      <button type="button" class="btn btn-primary" id="toggleCheckboxButton">
+        <img width="20" height="20" src="https://img.icons8.com/ios/50/administrative-tools.png" alt="administrative-tools" style="vertical-align: middle; margin-left: 5px" />
+      </button>
+
+      <div class="form-container" id="formContainer">
+        <h3>Aspectos para el PDF</h3>
+        <!-- Casillas de verificación para diferentes aspectos del PDF -->
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="margenCheckbox" name="aspectos[]" value="margen" />
+          <label class="form-check-label" for="margenCheckbox">Margen</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="reversoCheckbox" name="aspectos[]" value="reverso" />
+          <label class="form-check-label" for="reversoCheckbox">Reverso</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="folioCheckbox" name="aspectos[]" value="folio" />
+          <label class="form-check-label" for="folioCheckbox">Folio</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="codigoQRCheckbox" name="aspectos[]" value="codigoQR" />
+          <label class="form-check-label" for="codigoQRCheckbox">Código QR</label>
+        </div>
+        
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="aplicarCheckbox" name="aspectos[]" value="aplicar" />
+          <label class="form-check-label" for="aplicarCheckbox">Aplicar cambios</label>
+        </div>
+
+        <div class="form-group text-center">
+          <!-- Botón para cerrar el formulario adicional -->
+          <button type="button" class="btn btn-primary" id="closeButton">Cerrar</button>
+        </div>
+      </div>
+
+      <!-- Botón para enviar el formulario principal -->
+      <button type="submit" class="btn btn-primary">Procesar PDF</button>
+    </form>
+
+    <br>
+
+    <!-- Botón para descargar el PDF procesado -->
+    <button id="btnDescargarPDF" class="btn btn-primary">Descargar PDF</button>
+
+    <!-- Sección para mostrar los datos capturados del PDF -->
+    <div id="pdfData" style="display: none;">
+      <h2>Datos Capturados:</h2>
+      <p>Identificador Electrónico: <span id="identificadorElectronico" data-copy></span></p>
+      <p>Clave Única de Registro de Población: <span id="claveRegistroPoblacion" data-copy></span></p>
+      <p>Entidad de Registro: <span id="entidadRegistro" data-copy></span></p>
+      <p>Folio generado: <span id="folio" data-copy></span></p>
+      <div id="copyMessage"></div>
+    </div>
+    <div id="folioContainer" style="display: none;">
+      <p id="folio" data-copy></p>
+    </div>
+    
+  </div>
+
+  <!-- Enlaces a archivos JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="js/script-obtenerValores.js"></script>
+  <script src="js/script-enviarFormulario.js"></script>
+  <script src="js/script-descargarPDF.js"></script>
+  <script src="js/script-mostrarCheckbox.js"></script>
+  <script src="js/script-nameFile.js"></script>
+</body>
+</html>
